@@ -12,7 +12,7 @@ import os,sys
 
 try:
 
-	import requestsexcept:
+	import requestsexcept:python free.py
 
 	os.system("pip install requests")
 
